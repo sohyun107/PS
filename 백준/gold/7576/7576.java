@@ -37,11 +37,11 @@ public class Main {
                 if (box[i][j] == 1) {
                     queue.offer(new int[]{i, j});
                 }
-                if (box[i][j] == 0) hasUnripe = true;
+                if (box[i][j] == 0) hasUnripe = true;   // 하나라도 안 익어 있으면
             }
         }
 
-        if (!hasUnripe) { // 모든 토마토가 이미 익어 있으면
+        if (!hasUnripe) {   // 모든 토마토가 이미 익어 있으면
             System.out.println(0);
             return;
         }
@@ -63,7 +63,7 @@ public class Main {
 
                     if (box[nx][ny] == 0) {
                         box[nx][ny] = 1;
-                        queue.offer(new int[]{nx, ny});
+                        queue.offer(new int[]{nx, ny});   // 새롭게 익은 토마토 위치를 enqueue
                     }
                 }
             }
